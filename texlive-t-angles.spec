@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-t-angles
 Version:	20070312
-Release:	5
+Release:	6
 Summary:	Draw tangles, trees, Hopf algebra operations and other pictures
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/t-angles
