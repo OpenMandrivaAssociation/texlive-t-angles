@@ -3,7 +3,7 @@ Version:	71991
 Release:	1
 Summary:	Draw tangles, trees, Hopf algebra operations and other pictures
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/t-angles
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/t-angles
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/t-angles.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/t-angles.doc.r%{version}.tar.xz
