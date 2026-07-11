@@ -1,46 +1,23 @@
-Name:		texlive-t-angles
-Version:	71991
+%global tl_name t-angles
+%global tl_revision 71991
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
 Summary:	Draw tangles, trees, Hopf algebra operations and other pictures
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/t-angles
-License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/t-angles.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/t-angles.doc.r%{version}.tar.xz
+License:	gpl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/t-angles.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/t-angles.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A LaTeX2e package for drawing tangles, trees, Hopf algebra
-operations and other pictures. It is based on emTeX or TPIC
-\special's. Therefore, it can be used with the most popular
-drivers, including emTeX drivers, dviwin, xdvi and dvips, and
-(using some code from ConTeXt) it may also be used with
-PDFLaTeX.
+A LaTeX2e package for drawing tangles, trees, Hopf algebra operations
+and other pictures. It is based on emTeX or TPIC \specials. Therefore,
+it can be used with the most popular drivers, including emTeX drivers,
+dviwin, xdvi and dvips, and (using some code from ConTeXt) it may also
+be used with pdfLaTeX.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/t-angles/t-angles.sty
-%doc %{_texmfdistdir}/doc/latex/t-angles/README
-%doc %{_texmfdistdir}/doc/latex/t-angles/t-manual.pdf
-%doc %{_texmfdistdir}/doc/latex/t-angles/t-manual.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
